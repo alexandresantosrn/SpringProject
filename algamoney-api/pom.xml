@@ -38,19 +38,26 @@
 			<scope>test</scope>
 		</dependency>
 		
+		<!--MySQL-->
 		<dependency>
 			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
+			<artifactId>mysql-connector-java</artifactId>			
+			<scope>runtime</scope>			
 		</dependency>
-
+		
+		<!--Migrações - Flyway-->
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-mysql</artifactId>									
+		</dependency>
+		
 	</dependencies>
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<artifactId>spring-boot-maven-plugin</artifactId>	 
 			</plugin>
 		</plugins>
 	</build>
