@@ -40,16 +40,13 @@ public class CategoriaResource {
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{codigo}")
 				.buildAndExpand(categoriaSalva.getCodigo()).toUri();
 		response.setHeader("Location", uri.toASCIIString());
-		
+
 		return ResponseEntity.created(uri).body(categoriaSalva);
 	}
-	
+
 	@GetMapping("/{codigo}")
 	public Optional<Categoria> buscarPeloCodigo(@PathVariable Long codigo) {
-		return categoriaRepository.findById(codigo);		
+		return categoriaRepository.findById(codigo);
 	}
-	
-	
-	
 
 }
