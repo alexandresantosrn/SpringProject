@@ -39,11 +39,11 @@ public class AlgamoneyExceptionHandler extends ResponseEntityExceptionHandler {
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
 			HttpHeaders headers, HttpStatusCode status, WebRequest request) {
 
-		List<Erro> erros = criarListadeErroS(ex.getBindingResult());
+		List<Erro> erros = criarListadeErros(ex.getBindingResult());
 		return handleExceptionInternal(ex, erros, headers, HttpStatus.BAD_REQUEST, request);
 	}
 
-	private List<Erro> criarListadeErroS(BindingResult bindingResult) {
+	private List<Erro> criarListadeErros(BindingResult bindingResult) {
 		List<Erro> erros = new ArrayList<>();
 
 		for (FieldError fieldError : bindingResult.getFieldErrors()) {
