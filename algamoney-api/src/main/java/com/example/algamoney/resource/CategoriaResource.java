@@ -50,7 +50,7 @@ public class CategoriaResource {
 
 		Optional<Categoria> categoria = categoriaRepository.findById(codigo);
 
-		return !categoria.isEmpty() ? ResponseEntity.ok(categoria) : ResponseEntity.notFound().build();
+		return categoria.isPresent() ? ResponseEntity.ok(categoria) : ResponseEntity.notFound().build();
 	}
 
 }
