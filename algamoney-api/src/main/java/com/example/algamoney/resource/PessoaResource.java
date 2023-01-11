@@ -24,6 +24,11 @@ public class PessoaResource {
 
 	@Autowired
 	private PessoaRepository pessoaRepository;
+	
+	@GetMapping
+	public List<Pessoa> listar(){
+		return pessoaRepository.findAll();
+	}
 
 	@PostMapping
 	public ResponseEntity<Pessoa> criar(@Valid @RequestBody Pessoa pessoa, HttpServletResponse response) {
