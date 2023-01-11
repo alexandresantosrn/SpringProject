@@ -5,20 +5,20 @@ import jakarta.persistence.Embeddable;
 @Embeddable
 public class Endereco {
 
-	private String endereco;
+	private String logradouro;
 	private String numero;
 	private String complemento;
 	private String bairro;
 	private String cep;
 	private String cidade;
-	private String estado;
+	private String estado;	
 
-	public String getEndereco() {
-		return endereco;
+	public String getLogradouro() {
+		return logradouro;
 	}
 
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
 	}
 
 	public String getNumero() {
