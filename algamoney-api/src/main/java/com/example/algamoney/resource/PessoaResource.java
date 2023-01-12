@@ -26,9 +26,9 @@ public class PessoaResource {
 
 	@Autowired
 	private PessoaRepository pessoaRepository;
-	
+
 	@GetMapping
-	public List<Pessoa> listar(){
+	public List<Pessoa> listar() {
 		return pessoaRepository.findAll();
 	}
 
@@ -44,12 +44,12 @@ public class PessoaResource {
 
 		return ResponseEntity.created(uri).body(pessoaSalva);
 	}
-	
+
 	@GetMapping("/{codigo}")
 	public ResponseEntity<Object> buscarPeloCodigo(@PathVariable Long codigo) {
-		
+
 		Optional<Pessoa> pessoa = pessoaRepository.findById(codigo);
 		return pessoa.isPresent() ? ResponseEntity.ok(pessoa) : ResponseEntity.notFound().build();
 	}
-	
+
 }
