@@ -11,7 +11,7 @@ public class RecursoCriadoEvent extends ApplicationEvent {
 	private HttpServletResponse response;
 	private long codigo;
 
-	public RecursoCriadoEvent(Object source) {
+	public RecursoCriadoEvent(Object source, HttpServletResponse response, Long codigo) {
 		super(source);
 		this.response = response;
 		this.codigo = codigo;
